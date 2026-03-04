@@ -24,14 +24,24 @@ To run this project locally, you will need Python installed on your machine.
    git clone [https://github.com/yourusername/Py-WebCruiser-v1.0.git](https://github.com/yourusername/Py-WebCruiser-v1.0.git)
    cd Py-WebCruiser-v1.0
    ```
-2. **Install the required dependencies:**
+2. **Install `uv`:**
    ```bash
-   pip install PyQt6 PyQt6-WebEngine
+   pip install uv
    ```
-3. **Launch the browser:**
+3. **Create the project environment and install dependencies:**
    ```bash
-   python main.py
+   uv sync
    ```
+4. **Launch the browser:**
+   ```bash
+   uv run py-webcruiser
+   ```
+
+If you add new packages later, use:
+
+```bash
+uv add <package-name>
+```
 
 ## 🗺️ Roadmap for Future Learning
 This project serves as a foundation. Future iterations to deepen understanding of data structures and application state management include:

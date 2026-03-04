@@ -55,9 +55,13 @@ class MiniBrowser(QMainWindow):
         self.url_bar.setText(q.toString())
         self.url_bar.setCursorPosition(0)
 
-if __name__ == "__main__":
+def main():
+    """Launch the application."""
     # Initialize the application event loop
     app = QApplication(sys.argv)
     window = MiniBrowser()
     window.show()
-    sys.exit(app.exec())
+    return app.exec()
+
+if __name__ == "__main__":
+    sys.exit(main())
