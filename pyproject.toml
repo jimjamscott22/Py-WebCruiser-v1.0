@@ -9,6 +9,11 @@ dependencies = [
     "PyQt6-WebEngine",
 ]
 
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+]
+
 [project.scripts]
 py-webcruiser = "py_webcruiser:main"
 

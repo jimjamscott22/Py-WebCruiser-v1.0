@@ -21,7 +21,7 @@ To run this project locally, you will need Python installed on your machine.
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/yourusername/Py-WebCruiser-v1.0.git](https://github.com/yourusername/Py-WebCruiser-v1.0.git)
+   git clone https://github.com/yourusername/Py-WebCruiser-v1.0.git
    cd Py-WebCruiser-v1.0
    ```
 2. **Install `uv`:**
@@ -41,6 +41,12 @@ If you add new packages later, use:
 
 ```bash
 uv add <package-name>
+```
+
+To run the test suite:
+
+```bash
+uv run pytest
 ```
 
 ## 🗺️ Roadmap for Future Learning
