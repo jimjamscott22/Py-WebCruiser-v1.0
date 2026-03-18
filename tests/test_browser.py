@@ -8,8 +8,9 @@ def test_normalize_url_rejects_blank_values():
     assert normalize_url("   ") is None
 
 
-def test_normalize_url_adds_https_to_hostnames():
-    assert normalize_url("example.com") == QUrl("https://example.com")
+def test_normalize_url_adds_http_to_hostnames():
+    # QUrl.fromUserInput defaults to http
+    assert normalize_url("example.com") == QUrl("http://example.com")
 
 
 def test_normalize_url_keeps_http_and_https_urls():
@@ -18,4 +19,9 @@ def test_normalize_url_keeps_http_and_https_urls():
 
 
 def test_normalize_url_rejects_non_web_schemes():
-    assert normalize_url("ftp://example.com") is None
+    # FTP is not in the allowed schemes list, so we fallback to a search
+    assert normalize_url("ftp://example.com") == QUrl("https://www.google.com/search?q=ftp://example.com")
+
+
+def test_normalize_url_searches_for_plain_text():
+    assert normalize_url("python documentation") == QUrl("https://www.google.com/search?q=python documentation")
